@@ -4,12 +4,12 @@ image:
 tasks:
   - name: Futurenet
     init: |
-      docker pull stellar/quickstart:soroban-dev
+      docker pull stellar/quickstart:soroban-dev@sha256:57e8ab498bfa14c65595fbb01cb94b1cdee9637ef2e6634e59d54f6958c05bdb
     command: |
       docker run --rm -it \
       --name stellar \
       -p 8000:8000 \
-      stellar/quickstart:soroban-dev \
+      stellar/quickstart:soroban-dev@sha256:57e8ab498bfa14c65595fbb01cb94b1cdee9637ef2e6634e59d54f6958c05bdb \
       --futurenet \
       --enable-soroban-rpc
   # This "CLI - Futurenet" task opens a terminal for you to interact with the
@@ -18,20 +18,16 @@ tasks:
     # We specify some required environment variables for use on the futurenet.
     env:
       # This can be set by the user, but this terminal is dedicated to futurenet so set for convenience.
-      SOROBAN_RPC_URL: "http://127.0.0.1:8000/soroban/rpc"
+      SOROBAN_RPC_URL: "https://rpc-futurenet.stellar.org:443"
       SOROBAN_NETWORK_PASSPHRASE: "Test SDF Future Network ; October 2022"
     # To keep things tidy, we clear the terminal from the previous output.
     command: |
       clear
   - name: CLI - Sandbox
     init: |
-      make all
+      cargo test
     command: |
-      gp open README.md
-      gp open increment/src/lib.rs
-      gp open increment/src/test.rs
-      gp open README.md
-      soroban contract invoke --id 1 --wasm increment/target/wasm32-unknown-unknown/release/soroban_increment_contract.wasm --fn increment
+      
 vscode:
   extensions:
     - rust-lang.rust-analyzer
