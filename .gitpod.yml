@@ -25,9 +25,9 @@ tasks:
       clear
   - name: CLI - Sandbox
     init: |
-      cargo test
+      cargo clean
     command: |
-      
+      clear
 vscode:
   extensions:
     - rust-lang.rust-analyzer
