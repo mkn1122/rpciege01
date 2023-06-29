@@ -1,0 +1,9 @@
+issuer
+
+
+user
+
+
+soroban lab token wrap --rpc-url https://futurenet.rpciege.com:443 --network-passphrase 'Test SDF Future Network ; October 2022' \
+--source SB4JKOMSQEQ77NRYTQATIN2TIZT5ZQDUXEPEOHRMXP5UBLVWYTX4EV3C \
+--asset XLM:GDXIMPBNFAMLMBHUXKBI5SSFGMTIZLY3LKOQEIT4XX2RF6Q7KLJVSYKP

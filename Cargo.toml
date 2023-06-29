@@ -5,6 +5,7 @@ members = [
     "game1",
     "game2",
     "game3",
+    "game5",
     "game5/deployer",
     "game5/liquidity_pool",
     "ex_liquidity_pool",
